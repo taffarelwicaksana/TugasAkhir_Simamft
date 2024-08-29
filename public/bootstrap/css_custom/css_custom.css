@@ -1,0 +1,312 @@
+
+
+/* Navbar styling */
+.navbar-light {
+    background-color: #f8f9fa; /* Light color close to white */
+    position: relative;
+    z-index: 1001;
+}
+
+/* Profile info section in the navbar */
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: 100vh;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: -150px; /* Sidebar hidden off-screen by default */
+    background-color: #e9ecef; /* Slightly darker than the navbar */
+    transition: left 0.3s;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* Sidebar active state */
+.sidebar.active {
+    left: 0; /* Sidebar appears when active */
+}
+
+/* Sidebar link styling */
+.sidebar a {
+    color: #000; /* Dark text color */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+/* Sidebar header styling */
+.sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sidebar .sidebar-header img {
+    width: 100%;
+    height: auto;
+}
+
+/* Logout button styling in the sidebar */
+.sidebar .logout-btn {
+    position: absolute;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    left: 1rem;
+    border: none;
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Sidebar toggle button styling */
+.sidebar-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+
+.custom-table {
+   border-collapse: separate; /* Ensures border-radius applies to the table's border */
+   border-spacing: 0; /* Removes spacing between cells*/
+   border: 2px solid #fff; /* Border color and width*/
+   border-radius: 10px; /* Rounded corners for the border*/
+   overflow: hidden; /* Ensures the border-radius is respected*/
+   margin: 0px; /* Margin around the table*/
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);} /* Optional shadow for a 3D effect*/
+
+
+.custom-table th, .custom-table td {
+    border: none; /* Border for table cells */
+   padding: 4px; /* Cell padding */
+}
+
+.custom-table thead th {
+    background-color: #f8f9fa; /* Header background color */
+}
+ 
+.custom-table .col-fixed {
+    width: 400px; /* Fixed width for this column */
+}
+.custom-table .col-fixed-2 {
+    width: 170px; /* Fixed width for this column */
+}
+
+.custom-table .col-fixed-3 {
+    width: 50px; /* Fixed width for this column */
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 49.5%;
+}
+
+.btn-a, .btn-b, .btn-c {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    background-color: #37B7C3; /* Warna tombol */
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 10px; /* Sudut rounded */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border: none;
+    padding: 0; /* Menghapus padding default */
+}
+
+
+.btn-a {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 2px; /* Jarak antar tombol */
+}
+
+.btn-b {
+    width: 100%;
+    height: 100px;
+}
+
+.btn-c {
+    width: 50%;
+    height: 220px; /* Tinggi tombol c adalah dua kali tombol a atau b */
+}
+
+
+
+.sidebar-links a {
+    display: block; /* Memastikan link memenuhi ruang */
+    text-decoration: none; /* Menghapus underline dari link */
+    color: #000; /* Warna teks default */
+    padding: 10px; /* Padding untuk ruang di sekitar teks */
+    border-radius: 8px; /* Sudut rounded untuk semua link */
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus */
+}
+
+.sidebar-links a.active-link {
+    background-color: #071952; /* Warna latar belakang untuk highlight */
+    color: white; /* Warna teks berubah menjadi putih */
+    font-weight: bold; /* Teks menjadi tebal */
+}
+
+.sidebar-links a:hover {
+    background-color: #e9ecef; /* Warna latar belakang saat hover */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    margin-bottom: none;
+}
+
+ .custom-table, .chart-container {
+
+    margin-bottom: 20px;
+}
+
+/* .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.custom-table th, .custom-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #f8f9fa;
+}
+
+.custom-table tbody tr:last-child td {
+    border-bottom: none;
+} */
+
+.prestasi-akademik-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 0px;
+    border: 2px solid #ffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;   
+}
+
+.prestasi-akademik-container .row > div {
+    flex: 1;
+    text-align: center;
+}
+
+.prestasi-akademik-container h5 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.prestasi-akademik-container p {
+    font-size: 1.5rem;
+    margin: 5px 0 0;
+}
+
+.prestasi-akademik-container .divider {
+    border-left: 1px solid #000;
+    height: 60px; 
+}
+/* Ensure that the chart fits nicely next to the table */
+
+.col-md-6 {
+    padding: 10px;
+}
+
+/* Chart container */
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Custom CSS for the IPK Chart */
+#ipkChart {
+    max-width: 100%;
+    height: auto;
+}
+
+.new-container {
+    background-color: #f8f9fa; /* Background color */
+    border: 1px solid #fff;    /* Border color */
+    padding: 20px;             /* Padding */
+    border-radius: 5px;        /* Rounded corners */
+}
+
+.new-container h5 {
+    margin-top: 0;
+    color: #333;
+}
+
+.new-container p {
+    color: #666;
+}
+
+.custom-card-left, .custom-card-right {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card-left {
+    border-left: 5px solid #fff;
+}
+
+.custom-card-right {
+    border-left: 5px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-card-right .percentage {
+    color: #000000;
+    font-size: 12px;
+}
+
+.custom-card-right .increase {
+    color: #28a745;
+}
+
+.medal-icon {
+    font-size: 30px;
+    margin-left: 10px;
+}
