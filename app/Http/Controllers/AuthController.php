@@ -4,17 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+
 
 class AuthController extends Controller
 {
-    // Menampilkan form login
     public function showLoginForm()
     {
-        return view('auth.login'); // Pastikan Anda memiliki file ini di resources/views/auth/login.blade.php
+        return view('auth.login'); 
     }
 
-    // Menangani proses login
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -45,16 +43,15 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    // Fungsi bantu untuk mengarahkan user berdasarkan role
     private function redirectBasedOnRole()
     {
         $user = Auth::user();
 
         switch ($user->role->nama_role) {
             case 'admin':
-                return redirect()->route('dashboard.admin'); // Asumsi Anda memiliki route ini
+                return redirect()->route('dashboard.admin'); 
             case 'orangtua':
-                return redirect()->route('dashboard.user'); // Asumsi Anda memiliki route ini
+                return redirect()->route('dashboard.user'); 
             default:
                 Auth::logout();
                 return redirect('/login')->withErrors('Access denied. Please contact support.');

@@ -6,18 +6,49 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Models\Siswa;
+use App\Models\Prodi;
+use App\Models\IpkRecord;
+use Illuminate\Support\Facades\DB;
+
 
 class DashboardController extends Controller
 {
     public function admin()
     {
         if (Gate::allows('access-admin')) {
-            $siswa = Siswa::all(); // Fetch all students from the database
-            return view('admin.dashboard', ['siswa' => $siswa]);
+            $user = Auth::user();
+            $jumlahMahasiswa = Siswa::count();
+            $jumlahProdi = Prodi::count();
+            $rataRataIPK = IpkRecord::avg('ipk');
+            $jumlahMahasiswaPerAngkatan = Siswa::select('angkatan', DB::raw('count(*) as total'))
+                                                ->groupBy('angkatan')
+                                                ->get();
+            $xAxisData = []; 
+            $seriesData = []; 
+            $angkatanData = Siswa::select('angkatan', DB::raw('avg(ipk_records.ipk) as avg_ipk'))
+                                    ->join('ipk_records', 'siswa.id', '=', 'ipk_records.siswa_id')
+                                    ->groupBy('angkatan')
+                                    ->orderBy('angkatan', 'asc')
+                                    ->get();
+    
+            foreach ($angkatanData as $data) {
+                $xAxisData[] = "Angkatan " . $data->angkatan;
+                $seriesData[] = round($data->avg_ipk, 2);
+            }
+            return view('admin.dashboard', [
+                'user' => $user,
+                'jumlahMahasiswa' => $jumlahMahasiswa,
+                'jumlahProdi' => $jumlahProdi,
+                'rataRataIPK' => $rataRataIPK,
+                'jumlahMahasiswaPerAngkatan' => $jumlahMahasiswaPerAngkatan,
+                'xAxisData' => $xAxisData,
+                'seriesData' => $seriesData,
+            ]);
         }
     
         return abort(403, 'Unauthorized action.');
     }
+    
 
     public function user()
     {
@@ -25,14 +56,12 @@ class DashboardController extends Controller
             $user = Auth::user();
 
             if ($user && $user->siswa) {
-                // Menampilkan data siswa pada dashboard siswa
                 return view('siswa.dashboard', ['siswa' => $user->siswa]);
             }
             else {
-                // Jika tidak ada data siswa, kirimkan pesan error ke view
                 return back()->withErrors('Tidak ada data siswa yang tersedia untuk pengguna ini.');
             }
-            return view('siswa.dashboard'); // Pastikan view ini tersedia di resources/views/siswa/dashboard.blade.php
+            return view('siswa.dashboard'); 
         }
 
         return abort(403, 'Unauthorized action.');

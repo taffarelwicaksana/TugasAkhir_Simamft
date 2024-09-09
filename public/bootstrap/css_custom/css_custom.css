@@ -32,6 +32,7 @@
     z-index: 1000;
     padding: 1rem;
     overflow-y: auto;
+    text-decoration: none;
 }
 
 /* Sidebar active state */
@@ -88,7 +89,7 @@
    border-radius: 10px; /* Rounded corners for the border*/
    overflow: hidden; /* Ensures the border-radius is respected*/
    margin: 0px; /* Margin around the table*/
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);} /* Optional shadow for a 3D effect*/
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);} /* Optional shadow for a 3D effect*/
 
 
 .custom-table th, .custom-table td {
@@ -115,6 +116,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    text-decoration: none;
 }
 
 .left-buttons {
@@ -122,6 +124,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 49.5%;
+    text-decoration: none;
 }
 
 .btn-a, .btn-b, .btn-c {
@@ -168,6 +171,7 @@
 
 .sidebar-links a.active-link {
     background-color: #071952; /* Warna latar belakang untuk highlight */
+    text-decoration: none;
     color: white; /* Warna teks berubah menjadi putih */
     font-weight: bold; /* Teks menjadi tebal */
 }

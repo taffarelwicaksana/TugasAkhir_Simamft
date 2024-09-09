@@ -15,18 +15,14 @@
         </a>
         @endcan
         @can('access-admin')
-        <a href="#">
-            IPK Mahasiswa
-        </a>
+            <a href="{{ route('admin.siswa') }}"
+                class="{{ request()->routeIs('admin.siswa') ? 'active-link' : '' }}">
+                Tabel Mahasiswa
+            </a>
         @endcan
         @can('access-user')
         <a href="{{ route('siswa.ipk') }}"
             class="{{ request()->routeIs('siswa.ipk') ? 'active-link' : '' }}">
-            IPK Mahasiswa
-        </a>
-        @endcan
-        @can('access-admin')
-        <a href="#">
             IPK Mahasiswa
         </a>
         @endcan
@@ -37,9 +33,12 @@
         </a>
         @endcan
         </a>
-        <a href="#">
+        @can('access-user')
+        <a href="{{ route('siswa.angkatan') }}"
+            class="{{ request()->routeIs('siswa.angkatan') ? 'active-link' : '' }}">
             IPK Angkatan
         </a>
+        @endcan
     </div>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf

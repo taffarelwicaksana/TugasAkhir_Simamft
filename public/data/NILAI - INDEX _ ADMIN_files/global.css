@@ -1,0 +1,160 @@
+/*
+ * Put global style rules here...
+ */
+ 
+ /* ------- Global class ------ */
+.divclear {clear:both;}
+textarea.no-hresize {
+	resize: vertical;
+	min-height:100px;
+	max-height:400px;
+}
+input.width-150px {width:150px;}
+input.width-250px {width:250px;}
+a.ucc_gray {color:#777;}
+a.no_underline, a.no_underline:hover, a.no_underline:active,
+a.no_underline:visited, a.no_underline:link {text-decoration:none;}
+
+.mb-0 {margin-bottom: 0;}
+.mb-15px {margin-bottom: 15px;}
+.minheight-300px {min-height:300px;}
+.minheight-400px {min-height:400px;}
+.minheight-500px {min-height:500px;}
+.minheight-600px {min-height:600px;}
+
+.web_softpanel {padding:5px 10px; border: solid 1px #ddd; border-radius: 3px;margin-bottom:5px;}
+
+.web_detailset {
+	margin-bottom: 20px;
+}
+
+.web_detailset > .web_rowdetail {
+	min-height: 23px;
+	border-bottom: solid 1px #f9f9f9; padding: 1px 0px;
+}
+.row.web_rowdetail:hover {
+	background-color: #f9f9f9;
+}
+.web_detailset.tidy > .web_rowdetail > div:first-child {
+	text-align:right;
+}
+
+.table-smallfont {
+	font-size: 0.9em;
+}
+
+.table.table-condensed th, .table.table-condensed td {
+	padding: .75rem;
+}
+
+.table.table-x-condensed th, .table.table-x-condensed td {
+	padding: .5rem;
+}
+
+.table.table-nopadding th, .table.table-nopadding td {
+	padding: 0;
+}
+
+.table-siap tr.child-row td { padding: 5px; font-size: 0.9em;}
+
+/* ------- Overlays ------ */
+.modal.fade.no-slide .modal-dialog {
+	-webkit-transition: -webkit-transform .3s ease-out;
+	-o-transition: -o-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	-webkit-transform: translate(0,-0%);
+	-ms-transform: translate(0,-0%);
+	-o-transform: translate(0,-0%);
+	transform: translate(0,-0%);
+}
+
+.web_modal_dialog .modal-content {border-radius:0px;}
+.web_modal_dialog .modal-header {border-radius:0px;}
+.web_modal_dialog .modal-header button.close {top:14px;}
+.web_modal_dialog .web_dialog_loader {
+	padding: 15px 20px;text-align:center;background-color: #fff;width:300px;margin:0px auto;border-radius: 7px;
+	text-align: center;
+}
+#web_dlg_main {padding:15px;}
+
+.web_overlay {
+  display:none;
+  position: fixed; /* Stay in place */
+  z-index: 1071; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#global_overlay {
+	display: none;
+	position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;
+	z-index: 10000;
+	background: rgba(0,0,0,0.3);
+}
+#global_ov_box {
+	margin: 75px auto 20px;
+	width: 300px;
+	min-height: 100px;
+	background: #fff;
+	padding: 10px;
+	text-align: center;
+	border-radius: 7px;
+}
+#global_ov_msg {text-align: center; margin-bottom: 20px;}
+
+/* === DATATABLES ==== */
+.table th, .table td {
+	border-top: none;
+}
+
+/* ====== TABS ======= */
+.nav.nav-tabs.nav-top-border .nav-item a {
+    color: #3d59ab;
+}
+.nav.nav-tabs.nav-top-border .nav-item a.nav-link.active {
+    border-top-color: #3d59ab;
+}
+
+.tab-content.web_tabcontent {
+	border-left: 1px solid #adb5bd; border-right: 1px solid #adb5bd; border-bottom: 1px solid #adb5bd; border-radius: 0;
+}
+
+/* ====== DRAG AND DROPS ======= */
+.row_sortable {
+	position: relative;
+}
+.row_sortable .row_handle {
+	top: 0px; left: 0px; width: 48px; height: 48px; background-color: #DDD;position: absolute; cursor: move;
+	background-image: url('../images/cursor-move-64.png');
+	background-repeat: no-repeat; background-position:center; background-size: 24px;
+}
+
+.row_sortable .row_content {
+	height: 48px; margin-left: 64px;
+}
+
+/* ====== TABLE CHECKBOXES ======= */
+th.td_checkbox, td.td_checkbox {
+    width: 16px; padding-left: 15px; padding-right: 15px;
+}
+table tbody tr.checked td {
+    background-color: #ffffA0;
+}
+
+/* ====== MULTISELECTS ======= */
+.web_fixed .multiselect-native-select label.checkbox {
+    padding: 5px 10px;
+}
+
+/* ====== POPOVERS ======= */
+.popover-body table.popover_table {
+    font-size: 0.9em;
+}
+.popover-body table.popover_table td, .popover-body table.popover_table th {
+    padding: 5px 7px;
+}

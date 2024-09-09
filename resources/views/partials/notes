@@ -1,3 +1,0 @@
-<!-- {{ route('siswa.Angkatan') }}
-  class="{{ request()->routeIs('siswa.Angkatan') ? 'active-link' : '' }}" 
-  {{ route('logout') }}-->

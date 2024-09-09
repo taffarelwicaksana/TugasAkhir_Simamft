@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-    protected $table = 'siswa'; // Tambahkan ini untuk mengarahkan model ke tabel yang benar
+    protected $table = 'siswa'; 
 
     protected $fillable = [
         'nama',

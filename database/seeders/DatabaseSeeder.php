@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
             // FakultasSeeder::class,
             // ProdiSeeder::class,
             // DosbingSeeder::class,
-            // UserSeeder::class,
+            UserSeeder::class,
             // AdminSeeder::class,
-            SiswaSeeder::class,
+            // SiswaSeeder::class,
         ]);
     }
 }

@@ -2,11 +2,11 @@
 
 @section('konten')
 <div class="container">
-<h3>Fitur IPK Mahasiswa, Orangtua dari {{ $siswa->nama }}.</h3>
+<h3>Fitur IPK Mahasiswa</h3>
     
-    <!-- Row 1: Data Mahasiswa dan Prestasi Akademik -->
-    <div class="row mb-4">
-        <!-- Data Mahasiswa Section -->
+    <!-- Data Mahasiswa dan Prestasi Akademik -->
+    <div class="row">
+        <!-- Data Mahasiswa  -->
         <div class="col-md-6 mb-3 mb-md-0">
             <div class="card sm p-3 border-0">
                 <h5 class="border-bottom pb-2">Data Mahasiswa:</h5>
@@ -37,24 +37,24 @@
             </div>
         </div>
 
-        <!-- Prestasi Akademik Section -->
+        <!-- Prestasi Akademik  -->
         <div class="prestasi-akademik-container col-md-6">
             <div class="row">
                 
                 <div class="col">
-                    <h5>IPK</h5>
+                    <h5>IPKs</h5>
                     <p>{{ number_format($ipk, 2) }}</p>
                 </div>
                 <div class="col">
-                    <h5>SKS</h5>
-                    <p>{{ $totalSKS }}</p>
+                    <h5>SKSk</h5>
+                    <p>{{  number_format($totalSKS,0)  }}</p>
                 </div>
             </div>
         </div>
         </div>
     </div>
 
-    <!-- Row 2: IPK Per Semester and Chart -->
+    <!-- IPK Per Semester and Chart -->
     <div class="row">
         <!-- IPK Per Semester -->
         <div class="col-md-4 mb-3 mb-md-0">
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     stepSize: 0.5,
                     title: {
                         display: true,
-                        text: 'IP', // Label untuk sumbu Y
+                        text: 'I P', // Label untuk sumbu Y
                         color: '#111',
                         font: {
                             family: 'Helvetica',

@@ -65,10 +65,19 @@
         <a class="btn-b" href="{{route('siswa.prodi')}}">IPK PROGRAM STUDI</a>
         @endcan
         </div>
-        <a class="btn-c" href="">IPK ANGKATAN</a>
+        <a class="btn-c" href="{{route('siswa.angkatan')}}">IPK ANGKATAN</a>
     </div>
 
 
 </div>
 
 @endsection
+<style>
+    .custom-card {
+        background-color: #f8f9fa; /* Light background for cards */
+        border: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+        transition: box-shadow 0.3s;
+    }
+
+</style>

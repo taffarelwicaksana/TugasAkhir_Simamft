@@ -2,45 +2,51 @@
 
 @section('konten')
 <div>
-    <h3>Fitur IPK Program Studi {{ $siswa->prodi->nama_prodi }} Angkatan {{ $siswa->angkatan }}, Orangtua dari {{ $siswa->nama }}.</h3>
+    <h3>Fitur IPK Angkatan 
+    </h3>
 
     <div class="row">
-        <!-- Student Information Section -->
-        <div class="col-md-6">
-            <h4>Data Mahasiswa</h4>
-            <table class="custom-table p-1">
-                <tbody>
-                    <tr>
-                        <td class="col-fixed">Nama</td>
-                        <td>{{ $siswa->nama }}</td>
-                    </tr>
-                    <tr>
-                        <td>NIM</td>
-                        <td>{{ $siswa->NIM }}</td>
-                    </tr>
-                    <tr>
-                        <td>Program Studi</td>
-                        <td>{{ $siswa->prodi->nama_prodi }}</td>
-                    
-                    <tr>
-                        <td>Semester Berjalan</td>
-                        <td>{{ $siswa->semester_berjalan }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Data Mahasiswa Section -->
+        <div class="col-md-6 mb-3 mb-md-0">
+            <div class="card sm p-3 border-0">
+                <h5 class="border-bottom pb-2">Data Mahasiswa:</h5>
+                <table class="custom-table">
+                    <tbody>
+                        <tr>
+                            <td>Nama</td>
+                            <td>{{ $siswa->nama }}</td>
+                        </tr>
+                        <tr>
+                            <td>NIM</td>
+                            <td>{{ $siswa->NIM }}</td>
+                        </tr>
+                        <tr>
+                            <td>Program Studi</td>
+                            <td>{{ $siswa->prodi->nama_prodi }}</td>
+                        </tr>
+                        <tr>
+                            <td>Angkatan</td>
+                            <td>{{ $siswa->angkatan }}</td>
+                        </tr>
+                        <tr>
+                            <td>Semester Berjalan</td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
         <!-- Academic Performance Section -->
-        <div class="prestasi-akademik-container sm-4 mx-1 my-3">
+        <div class="prestasi-akademik-container col-md-6">
             <div class="row">
-                <div>
+                
+                <div class="col">
                     <h5>IPK</h5>
                     <p>{{ number_format($ipk, 2) }}</p>
                 </div>
-                <div class="divider"></div>
-                <div>
+                <div class="col">
                     <h5>SKS</h5>
-                    <p>{{ $totalSKS }}</p>
+                    <p>{{ number_format($totalSKS,0) }}</p>
                 </div>
             </div>
         </div>
@@ -53,7 +59,7 @@
             <div class="col-md-6">
                 <div class="custom-card-left">
                     <p>Program Studi: {{ $siswa->prodi->nama_prodi }}</p>
-                    <p>Rata-rata IPK Mahasiswa Angkatan {{$siswa->tahun_ajar}} :{{ $averageIPKAngkatan }}</p>
+                    <p>Rata-rata IPK Mahasiswa Angkatan {{$siswa->tahun_ajar}} :{{ number_format($averageIPKAngkatan, 2) }}</p>
                 </div>
             </div>
 
